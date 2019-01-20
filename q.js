@@ -11,9 +11,9 @@ function addColumn() {
         let elem = document.createElement("td");
         arr[i].appendChild(elem);
     }
-    if( table.rows[0].cells.length >= 2){
-        removeButtonColumn.style.visibility = "visible";
-    }
+    // if( table.rows[0].cells.length >= 2){
+    //     removeButtonColumn.style.visibility = "visible";
+    // }
 };
 //adding row
 addButtonRow.onclick = addRow;
@@ -29,9 +29,9 @@ function addRow() {
     console.log(table.getElementsByTagName("tbody")[0]);
     table.getElementsByTagName("tbody")[0].appendChild(row);
     //set Visible
-    if(table.rows.length >=2 ){
-        removeRow.style.visibility = "visible";
-    }
+    // if(table.rows.length >=2 ){
+    //     removeRow.style.visibility = "visible";
+    // }
 }
 
 
@@ -40,36 +40,39 @@ removeButtonColumn.onclick = removeColumn;
 function removeColumn(){
 
     let rows = document.getElementsByTagName("tr");
+    console.log(table.getElementsByTagName("tbody"));
     for (let i = 0; i < rows.length; i++) {
         table.rows[i].cells[0].remove();
     }
-    let cells = table.rows[0].cells.length;
-    console.log(cells);
-    if(cells < 2 ) {
-        removeButtonColumn.style.visibility = "hidden";
-    }
 
+    let cells = table.rows[0].cells.length;
+    //console.log(cells);
+    //if(cells < 2 ) {
+    removeButtonColumn.style.visibility = "hidden";
+    removeRow.style.visibility = "hidden";
+    //}
+    //removeButtonColumn.style.visibility = "hidden";
 }
 
 let removeRow = document.getElementById("minusButtonRow");
 removeRow.onclick = removeRows;
 function removeRows() {
-
     let rows = document.getElementsByTagName("tr");
     table.rows[0].remove();
 
-    if(rows.length < 2){
-        removeRow.style.visibility = "hidden";
-    }
+   // if(rows.length < 2){
+    removeButtonColumn.style.visibility = "hidden";
+    removeRow.style.visibility = "hidden";
+    //}
 }
 
 table.onmouseover = move;
 table.onmouseleave = leave;
-
+removeRow.onmouseover = makeVisible;
+removeButtonColumn.onmouseover = makeVisible;
 function move(event) {
     //target.style.marginLeft = (parseInt(window.getComputedStyle(target).marginLeft) + 54).toString()+"px";
-    removeRow.style.visibility = "visible";
-    removeButtonColumn.style.visibility = "visible";
+    makeVisible();
     let elem = event.target;
     let m = window.getComputedStyle(elem);
     if(elem.tagName === "TD"){
@@ -113,6 +116,21 @@ function move(event) {
 
     }
     //console.log(event.target.tagName)
+}
+function  makeVisible() {
+    if(table.rows.length >=2 ) {
+        removeRow.style.visibility = "visible";
+    }
+
+    // removeRow.onclick = function () {
+    //     removeRow.style.visibility = "hidden";
+    // }
+    if( table.rows[0].cells.length >= 2){
+            removeButtonColumn.style.visibility = "visible";
+    }
+
+    // removeRow.style.visibility = "visible";
+    // removeButtonColumn.style.visibility = "visible";
 }
 
 function leave (){
