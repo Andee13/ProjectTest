@@ -87,13 +87,20 @@ function move(event) {
 
         }
 
-        let left = 53.8 * indexLeft;
+        //
+        let left = 103 + 53.8 * indexLeft;
+
         //change style via style
         //console.log("index = ", window.getComputedStyle(removeButtonColumn).left);
-        removeButtonColumn.style.left = "100px";
-        removeButtonColumn.style.left = ((parseInt(window.getComputedStyle(removeButtonColumn).left) + left).toString() + "px");
+        // removeButtonColumn.style.left = "103px";
+        // console.log("1111111 = " + left);
+        // console.log("1111111 = " + indexLeft);
+        // console.log("1111111 = " + window.getComputedStyle(removeButtonColumn).left);
+        //
+        // removeButtonColumn.style.left = ((parseInt(window.getComputedStyle(removeButtonColumn).left) + left).toString() + "px");
 
-
+        removeButtonColumn.style.left = left + "px";
+        //
         //find a row
         let indexTop = 0;
         for(let i = 0;i < elem.parentNode.parentNode.children.length; i++){
@@ -103,13 +110,17 @@ function move(event) {
                 break;
             }
         }
-        console.log(indexTop);
-        let top = indexTop * 52.8;
-        removeRow.style.top = "103px";
-        removeRow.style.top = ((parseInt(window.getComputedStyle(removeRow).top) + top).toString() + "px");
 
-        let interval = parseInt(window.getComputedStyle(removeRow).top)  + top;
-        console.log("interval = ", interval);
+        //code comment try doing
+        console.log(indexTop);
+        let top = 103 + indexTop * 52.8;
+        // removeRow.style.top = "103px";
+        // removeRow.style.top = ((parseInt(window.getComputedStyle(removeRow).top) + top).toString() + "px");
+        //
+        // let interval = parseInt(window.getComputedStyle(removeRow).top)  + top;
+        // console.log("interval = ", interval);
+        removeRow.style.top = top + "px";
+        //
 
 
          // let timer = setInterval(function() {
