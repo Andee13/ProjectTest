@@ -15,24 +15,30 @@ td{
 }
 #addButtonColumn, #addButtonRow, #minusButtonColumn, #minusButtonRow {
     position: absolute;
+
     height:50px;
     width: 50px;
     color: white;
-    line-height: 20px;
-    font: normal 43px Arial;
+
+    font: normal 25px Arial;
     text-align: center;
     cursor: pointer;
+
+}
+#addButtonColumn.height,#addButtonRow.height,#minusButtonColumn.height, #minusButtonRow.height{
+    line-height: 50px;
+
 }
 #addButtonColumn{
     top:103px;
     right: 48px;
-    background: yellow;
+    background: rgb(243, 165, 0);
 }
 #addButtonRow{
     left:103px;
     bottom: 48px;
     position: absolute;
-    background: yellow;
+    background: rgb(243, 165, 0);
     color: white;
 }
 #scene{
@@ -44,11 +50,13 @@ td{
     position: absolute;
     left:103px;
     top:48px;
-    background: red;
+    background: rgb(178, 0, 0);
+    /*transition: left 1s ease-out 0.5s, right 1s ease-out 0.5s;*/
 }
 #minusButtonRow{
     position: absolute;
     left:48px;
     top:103px;
-    background: red;
+    background: rgb(178, 0, 0);
+    transition: top 1s ease-out 0.5s;
 }

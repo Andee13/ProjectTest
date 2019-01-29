@@ -60,10 +60,10 @@ function removeRows() {
     let rows = document.getElementsByTagName("tr");
     table.rows[0].remove();
 
-   // if(rows.length < 2){
+
     removeButtonColumn.style.visibility = "hidden";
     removeRow.style.visibility = "hidden";
-    //}
+
 }
 
 table.onmouseover = move;
@@ -107,9 +107,21 @@ function move(event) {
         let top = indexTop * 52.8;
         removeRow.style.top = "103px";
         removeRow.style.top = ((parseInt(window.getComputedStyle(removeRow).top) + top).toString() + "px");
-        //console.log(elem.parentNode.children.item());
-        //console.log(elem.parentNode);
 
+        let interval = parseInt(window.getComputedStyle(removeRow).top)  + top;
+        console.log("interval = ", interval);
+
+
+         // let timer = setInterval(function() {
+         //     if (interval <= window.getComputedStyle(removeRow).top) {
+         //         clearInterval(timer); // конец через 1 секунду
+         //         return;
+         //     }
+         //     let nf = parseInt(window.getComputedStyle(removeRow).top) + 1;
+         //     removeRow.style.top = nf + "px";
+         //     }, 100);
+
+        //
         window.getComputedStyle(removeButtonColumn);
         //console.log();
 
