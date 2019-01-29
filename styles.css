@@ -51,12 +51,12 @@ td{
     left:103px;
     top:48px;
     background: rgb(178, 0, 0);
-    transition: left 1s ease-out 0s;
+    transition: left 0.4s ease-out 0s;
 }
 #minusButtonRow{
     position: absolute;
     left:48px;
     top:103px;
     background: rgb(178, 0, 0);
-    transition: top 0.5s ease-out 0s;
+    transition: top 0.4s ease-out 0s;
 }
