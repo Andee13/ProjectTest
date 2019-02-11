@@ -51,17 +51,15 @@ table.addEventListener('mouseover', () =>{
     }
 });
 table.addEventListener('mouseleave', hide);
-scene.addEventListener('mouseover', makeVisible);
-
-
-function  makeVisible() {
+scene.addEventListener('mouseover', () => {
     if(table.rows.length >=2 ) {
         removeRow.style.visibility = "visible";
     }
     if( table.rows[0].cells.length >= 2){
-            removeButtonColumn.style.visibility = "visible";
+        removeButtonColumn.style.visibility = "visible";
     }
-}
+});
+
 function hide() {
     removeButtonColumn.style.visibility = "hidden";
     removeRow.style.visibility = "hidden";
