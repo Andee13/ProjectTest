@@ -35,8 +35,10 @@ td{
     background: rgb(243, 165, 0);
 }
 #addButtonRow{
-    left:103px;
-    bottom: 48px;
+    /*left:103px;*/
+    left:28.2%;
+    /*bottom: 48px;*/
+    bottom: 15%;
     position: absolute;
     background: rgb(243, 165, 0);
     color: white;
@@ -48,7 +50,8 @@ td{
 }
 #minusButtonColumn{
     position: absolute;
-    left:103px;
+    /*left:103px;*/
+    /*left:5%;*/
     top:48px;
     background: rgb(178, 0, 0);
     transition: left 0.4s ease-out 0s;
