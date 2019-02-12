@@ -64,3 +64,4 @@ function hide() {
     removeButtonColumn.style.visibility = "hidden";
     removeRow.style.visibility = "hidden";
 }
+

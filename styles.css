@@ -40,6 +40,7 @@ td{
     margin:100px;
 }
 #minusButtonColumn{
+    visibility: hidden;
     position: absolute;
     left:0;
     top:-52px;
@@ -48,6 +49,7 @@ td{
     transition: left 0.4s ease-out 0s;
 }
 #minusButtonRow{
+    visibility: hidden;
     position: absolute;
     left:-52px;
     margin-top:2px;
