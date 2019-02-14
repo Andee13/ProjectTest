@@ -2,7 +2,7 @@ drawTheTable("scene");
 
 function drawTheTable(idWrapperOfTable) {
     const tableWrapper = document.querySelector("#"+idWrapperOfTable);
-    const table = tableWrapper .querySelector("#table");
+    const table = tableWrapper.querySelector(".table");
     const addButtonColumn = tableWrapper.querySelector(".btn.add.addColumn");
     const addButtonRow = tableWrapper.querySelector(".btn.add.addRow");
     const removeButtonColumn = tableWrapper.querySelector(".btn.remove.removeColumn");
@@ -12,11 +12,11 @@ function drawTheTable(idWrapperOfTable) {
     let lastColumnPosition;
     let timerId;
 
-    addButtonColumn.addEventListener('mouseover',()=>{
-        setTimeout(hideRemoveButtons, 10);
+    removeRow.addEventListener('mouseover', () => {
+        clearTimeout(timerId);
     });
-    addButtonRow.addEventListener('mouseover', () =>{
-        setTimeout(hideRemoveButtons, 10);
+    removeButtonColumn.addEventListener('mouseover', () =>{
+        clearTimeout(timerId);
     });
     addButtonColumn.addEventListener('click', () => {
         const array = document.querySelectorAll("tr");
@@ -62,11 +62,10 @@ function drawTheTable(idWrapperOfTable) {
             removeButtonColumn.style.left = ((100 / countColumn) * lastColumnPosition) + "%";
         }
     });
-    tableWrapper.addEventListener('mouseleave',() => {
-        timerId =  setTimeout(hideRemoveButtons, 400);
+    table.addEventListener('mouseleave',()=>{
+        timerId = setTimeout(hideRemoveButtons, 300);
     });
-    tableWrapper.addEventListener('mouseover', () => {
-        clearTimeout(timerId);
+    table.addEventListener('mouseover', () => {
         if (table.rows.length >= 2) {
             removeRow.style.visibility = "visible";
         }
@@ -74,6 +73,7 @@ function drawTheTable(idWrapperOfTable) {
             removeButtonColumn.style.visibility = "visible";
         }
     });
+
 
     function hideRemoveButtons() {
         removeButtonColumn.style.visibility = "hidden";
