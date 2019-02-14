@@ -10,7 +10,7 @@ td{
     height:50px;
     background-color: #48aae6;
 }
-.btn{
+.table-btn{
     position: absolute;
     height:51px;
     width: 51px;
@@ -19,27 +19,27 @@ td{
     text-align: center;
     cursor: pointer;
 }
-.btn.remove, .btn.add{
+.table-btn.remove, .table-btn.add{
     line-height: 50px;
 }
-.btn.add.addColumn{
+.table-btn.add.addColumn{
     top:2px;
     right:-54px;
     background: rgb(243, 165, 0);
 }
-.btn.add.addRow{
+.table-btn.add.addRow{
     margin-top: 2px;
     left:3px;
     position: absolute;
     background: rgb(243, 165, 0);
     color: white;
 }
-#scene{
+.scene{
     position: relative;
     display: inline-block;
     margin:100px;
 }
-.btn.remove.removeColumn{
+.table-btn.remove.removeColumn{
     visibility: hidden;
     position: absolute;
     left:0;
@@ -49,7 +49,7 @@ td{
     background: rgb(178, 0, 0);
     transition: left 0.4s ease-out 0s;
 }
-.btn.remove.removeRow{
+.table-btn.remove.removeRow{
     visibility: hidden;
     position: absolute;
     left:-54px;
