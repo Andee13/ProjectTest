@@ -18,6 +18,8 @@ function drawTheTable(idWrapperOfTable) {
     removeButtonColumn.addEventListener('mouseover', () =>{
         clearTimeout(timerId);
     });
+    removeButtonColumn.addEventListener('mouseleave', hideRemoveButtons);
+    removeRow.addEventListener('mouseleave', hideRemoveButtons);
     addButtonColumn.addEventListener('click', () => {
         const array = document.querySelectorAll("tr");
         const length = array.length;
